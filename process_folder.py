@@ -20,12 +20,12 @@ if __name__ == '__main__':
     segmentationModule = MPSegmentation(threshold=args.threshold, bg_color=(255,255,255))
 
     # Read image names
-    dataset =  make_dataset(inp_folder)
+    dataset =  make_dataset(args.inp_folder)
 
     for path in tqdm(dataset):
         # Get I/O names
         name = path.split('/')[-1]
-        opt_path = os.path.join(opt_folder, name)
+        opt_path = os.path.join(args.opt_folder, name)
 
         # Read input image
         img1 = cv2.imread(path)
